@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use the Bootstrap CSS framework
 gem 'bootstrap-sass'
+# Use FontAwesome for awesomes. wait, I mean fonts.
+gem 'font-awesome-sass'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
