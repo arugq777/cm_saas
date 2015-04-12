@@ -1,0 +1,10 @@
+<div class="row">
+  <% form_for @contact do |f| -%>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+    <%= f.label :email, "Email" %>
+    <%= f.email_field :email %>
+    <%= f.label :comments, "Comments" %>
+    <%= f.text_area :comments %>
+  <% end -%>  
+</div>
