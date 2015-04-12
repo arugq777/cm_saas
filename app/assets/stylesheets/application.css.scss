@@ -16,3 +16,20 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+//gradient from uigradients.com
+.navbar, .footer{
+  background: -webkit-linear-gradient(90deg, #1F1C2C 10%, #928DAB 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #1F1C2C 10%, #928DAB 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #1F1C2C 10%, #928DAB 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #1F1C2C 10%, #928DAB 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #1F1C2C 10%, #928DAB 90%); /* W3C */
+}
+
+.footer{
+  bottom: 0;
+  width:100%;
+  position: fixed;
+}
