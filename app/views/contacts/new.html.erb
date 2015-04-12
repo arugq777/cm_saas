@@ -1,10 +1,24 @@
 <div class="row">
-  <% form_for @contact do |f| -%>
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
-    <%= f.label :email, "Email" %>
-    <%= f.email_field :email %>
-    <%= f.label :comments, "Comments" %>
-    <%= f.text_area :comments %>
-  <% end -%>  
+  <%= form_for @contact do |f| %>
+    <div class="col-md-6 col-md-offset-3">
+      <div class="well">
+        <div class="form-group">
+          <%= f.label :name, "Name" %>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Windbag McGee' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email, "Email" %>
+          <%= f.email_field :email, class: 'form-control', placeholder: 'blah@example.com' %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :comments, "Comments" %>
+          <%= f.text_area :comments, class: 'form-control', placeholder: "Compelling evidence that hot air doesn't rise" %>
+        </div>
+        
+        <%= f.submit "Submit", class: 'btn btn-default', :disable_with => 'Submitting...' %>
+      </div>
+    </div>
+  <% end %>  
 </div>

@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-
+    @contact.save
   end
 
 end
