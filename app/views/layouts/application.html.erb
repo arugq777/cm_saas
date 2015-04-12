@@ -70,6 +70,9 @@
   </nav>
 
   <div class="container">
+    <% flash.each do |k, v|%>
+      <%= content_tag :div, v, class: "alert alert-#{k}"%>
+    <% end -%>
     <%= yield %>
   </div>
 

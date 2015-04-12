@@ -12,9 +12,12 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      redirect_to new_contact_path, notice: 'saved!'
+      ContactMailer.contact_email(@contact.name, @contact.email, @contact.comments).deliver
+      flash[:success] = 'saved!'
+      redirect_to new_contact_path
     elsif
-      redirect_to new_contact_path, notice: 'NOPE.'
+      flash[:danger] = 'NOPE.'
+      redirect_to new_contact_path 
     end
         
   end

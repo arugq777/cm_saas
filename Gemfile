@@ -26,6 +26,9 @@ gem 'bootstrap-sass'
 # Use FontAwesome for awesomes. wait, I mean fonts.
 gem 'font-awesome-sass'
 
+# Use Devise for authentication
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
