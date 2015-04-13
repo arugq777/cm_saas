@@ -1,4 +1,32 @@
-<div class="jumbotron">
+<div class="jumbotron text-center">
   <h1>Welcome to home.</h1>
   <h3>there will be stuff here.</h3>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="well">
+      <h2 class="text-center">  
+        Basic plan
+      </h2>
+      <div class="alert-success well">
+        <h4>
+          free!
+        </h4>
+      </div>
+      <%= link_to "Sign Up!", new_user_registration_path(plan: @basic_plan.id), class:"btn btn-primary btn-block btn-lg" %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <h2 class="text-center">
+        pro plan
+      </h2>
+      <div class="alert-error well">
+        <h4>
+          $10/month!
+        </h4>
+      </div>
+      <%= link_to "Sign Up!", new_user_registration_path(plan: @pro_plan.id), class:"btn btn-primary btn-block btn-lg" %>
+    </div>
+  </div>
 </div>
