@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <h2 class="text-center">
+    Create a profile!
+  </h2>
+  <p class="text-center">
+    There's a form here, delivering your information to the server like a stork. That's where profiles come from. 
+  </p>
+  <div class="well">
+    <%= form_for @profile, url: user_profile_path do |f| -%>
+      <div class="form-group">
+        <%= f.label :first_name, "First Name" %>
+        <%= f.text_field :first_name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_name, "Last Name" %>
+        <%= f.text_field :last_name, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :job_title, "Job Title" %>
+        <%= f.select :job_title, ['Developer', 'Entrepreneur', 'Investor', 'Other'], {}, class: "form-control"%>
+      </div>
+      <div class="form-group">
+        <%= f.label :phone_number, "Phone Number" %>
+        <%= f.text_field :phone_number, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :contact_email, "Contact Email" %>
+        <%= f.email_field :contact_email, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description, "Description" %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Submit", :disable_with => 'Submiting...', class: 'btn btn-primary' %>
+      </div>
+    <% end -%>
+  </div>
+  </div>
+</div>

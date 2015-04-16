@@ -43,10 +43,19 @@
           <li><%= link_to "Contact", new_contact_path %></li>
           <li>  
             <% if current_user %>
-              <%= button_to 'sign out', destroy_user_session_path, method: :delete, class: 'btn btn-default navbar-btn' %>
+              <li>
+                <%= link_to "create your profile", new_user_profile_path(current_user.id) %>
+              </li>
+              <li>
+                <%= button_to 'sign out', destroy_user_session_path, method: :delete, class: 'btn btn-default navbar-btn' %>
+              </li>
             <% else %>
-              <%= link_to "log in", new_user_session_path, method: :get, class: 'btn btn-primary navbar-btn' %>
-              <%= link_to 'sign up', new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %>
+              <li>
+                <%= link_to "log in", new_user_session_path, method: :get, class: 'btn btn-primary navbar-btn' %>
+              </li>
+              <li>
+                <%= link_to 'sign up', new_user_registration_path, method: :get, class: 'btn btn-success navbar-btn' %>
+              </li>
             <% end -%>
           </li>
         </ul>
