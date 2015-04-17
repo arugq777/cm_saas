@@ -1,0 +1,4 @@
+<% info = [:phone_number, :contact_email] %>
+  <% info.each do |i| %>
+    <li><%= @profile[i.to_s] %></li>
+  <% end -%>

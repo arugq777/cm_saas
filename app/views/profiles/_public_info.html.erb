@@ -1,0 +1,4 @@
+<% info = [:first_name, :last_name, :job_title, :description] %>
+  <% info.each do |i| %>
+    <li><%= @profile[i.to_s] %></li>
+  <% end -%>

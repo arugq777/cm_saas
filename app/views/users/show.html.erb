@@ -1,0 +1,16 @@
+<div class="col-md-6 col-md-offset-3">
+  <div class="well">
+  <% if @user.profile.nil? %>
+    <h3 class="text-center">this user has not created a profile yet</h3>
+  <% else %>
+    <ul>
+      <%= render "/profiles/public_info" %>
+      <% if current_user.plan_id == 2 || @user == current_user %>
+        <%= render "/profiles/private_info" %>
+      <% else %>
+        <p>sign up for a Pro account to get this user's contact information!</p>
+      <% end -%>
+    </ul>
+  <% end -%>
+  </div>
+</div>

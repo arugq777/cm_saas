@@ -1,0 +1,29 @@
+<%= form_for @profile, url: user_profile_path do |f| -%>
+  <div class="form-group">
+    <%= f.label :first_name, "First Name" %>
+    <%= f.text_field :first_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name, "Last Name" %>
+    <%= f.text_field :last_name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :job_title, "Job Title" %>
+    <%= f.select :job_title, ['Developer', 'Entrepreneur', 'Investor', 'Other'], {}, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_number, "Phone Number" %>
+    <%= f.text_field :phone_number, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_email, "Contact Email" %>
+    <%= f.email_field :contact_email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Submit", :disable_with => 'Submiting...', class: 'btn btn-primary' %>
+  </div>
+<% end -%>
