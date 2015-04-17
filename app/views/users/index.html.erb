@@ -1,0 +1,7 @@
+<ul class="users">
+  <% @users.each do |u| %>
+    <% unless u.profile.nil? %>
+      <li class="user"><%= link_to "#{u.profile.first_name} #{u.profile.last_name}", user_path(u.id) %>, <%= u.profile.job_title %></li>
+    <% end %>
+  <% end -%>
+</ul>
