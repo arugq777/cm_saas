@@ -1,4 +1,7 @@
 <% info = [:phone_number, :contact_email] %>
-  <% info.each do |i| %>
-    <li><%= @profile[i.to_s] %></li>
-  <% end -%>
+  <div class="well contact-info">
+    <h3>Contact Info</h3>
+    <% info.each do |i| %>
+      <h5><%= format(i) %> <%= @profile[i.to_s] %></h5>
+    <% end -%>
+  </div>

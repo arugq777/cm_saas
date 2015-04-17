@@ -1,4 +1,12 @@
 <% info = [:first_name, :last_name, :job_title, :description] %>
-  <% info.each do |i| %>
-    <li><%= @profile[i.to_s] %></li>
-  <% end -%>
+  <h1 class=""><%= "#{@profile['first_name']} #{@profile['last_name']}"%></h1>
+  <h3 class="">
+    <span class="job-title-icon text-center">
+      <%= job_title_icon(@profile['job_title']).html_safe %>
+    </span>
+    <%= @profile['job_title'] %>
+  </h3>
+  <div class="well profile-description">
+    <h3>Description</h3>
+    <%= @profile['description'] %>
+  </div>
