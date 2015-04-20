@@ -11,16 +11,4 @@ module UsersHelper
       "<i class='fa fa-question'></i>"
     end
   end
-
-  def format(item)
-    # empty temp variables
-    arr = []
-    str = ""
-    # converts a :symbol_like_this into ["Symbol", "Like", "This"]
-    item.to_s.split('_').each { |s| arr << s.capitalize }
-    # concatenates the string "Symbol Like This "
-    arr.each {|s| str += s + ' '}
-    # returns the string "Symbol Like This:"
-    str.rstrip + ':'
-  end
 end

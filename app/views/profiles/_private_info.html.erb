@@ -2,6 +2,6 @@
   <div class="well contact-info">
     <h3>Contact Info</h3>
     <% info.each do |i| %>
-      <h5><%= format(i) %> <%= @profile[i.to_s] %></h5>
+      <h5><%= i.to_s.humanize %>: <%= @profile[i.to_s].humanize %></h5>
     <% end -%>
   </div>

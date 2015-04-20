@@ -23,3 +23,30 @@
   background-color: #5bc0de;
   border-color: #46b8da;
 }
+
+.show-avatar{
+  height:100px;
+  width: 100px;
+  border: 1px dotted black;
+  overflow: hidden;
+  padding: 0;
+}
+
+.profile-avatar{
+  height:200px;
+  width: 200px;
+  border: 1px dotted black;
+  overflow: hidden;
+  padding: 0;
+}
+
+.centered-avatar {
+  object-fit: cover;
+}
+
+
+li.user{
+  h4{
+    margin:0;
+  }
+}

@@ -1,21 +1,30 @@
 <div class="row">
-  <div>
-    <% if @user.profile.nil? %>
-      <h3 class="text-center">this user has not created a profile yet</h3>
-    <% else %>
-      <div class="col-md-3 text-center">
-        <%= image_tag @user.profile.avatar.url(:medium) %> 
-      </div>
-      <div class="col-md-6">
-        <ul>
-          <%= render "/profiles/public_info" %>
-          <% if current_user.plan_id == 2 || @user == current_user %>
-            <%= render "/profiles/private_info" %>
-          <% else %>
-            <p>sign up for a Pro account to get this user's contact information!</p>
-          <% end -%>
-        </ul>
-      </div>
-    <% end -%>
-  </div>
+  <% if user_signed_in? %>
+    <div>
+      <% if @user.profile.nil? %>
+        <h3 class="text-center">this user has not created a profile yet</h3>
+      <% else %>
+        <div class="col-md-3 text-center">
+          <div class="profile-avatar">
+            <%= image_tag @user.profile.avatar.url(:medium), class: "centered-avatar" %> 
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <%= render "/profiles/public_info" %>
+            <% if current_user.plan_id == 2 || @user == current_user %>
+              <%= render "/profiles/private_info" %>
+            <% else %>
+              <p>sign up for a Pro account to get this user's contact information!</p>
+            <% end -%>
+          </ul>
+        </div>
+      <% end -%>
+    </div>
+    <%= link_to "< back to the Community", users_path %>
+  <% else %>
+    <div class="well">
+      <p>Huh? You should have been redirected to the homepage if you're not signed in.</p>
+    </div>
+  <% end -%>
 </div>

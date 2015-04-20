@@ -1,7 +1,36 @@
-<ul class="users">
+<ul class="users list-unstyled">
   <% @users.each do |u| %>
     <% unless u.profile.nil? %>
-      <li class="user"><%= link_to "#{u.profile.first_name} #{u.profile.last_name}", user_path(u.id) %>, <%= u.profile.job_title %></li>
+      <li class="user well col-md-6 col-md-offset-3">
+        <div class="row">
+          <div class="col-sm-4 col-md-3">
+            <div class="show-avatar">
+              <% unless u.profile.avatar.nil? %>
+                <%= image_tag u.profile.avatar.url(:medium), class: "centered-avatar" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="info col-sm-8 col-md-6">
+            <ul class="list-unstyled">
+              <li>  
+                <h4><%= link_to "#{u.profile.first_name} #{u.profile.last_name}", user_path(u.id) %></h4>
+              </li>
+              <li>
+                <%= u.profile.job_title %>
+              </li>
+              <% if u.plan_id == 2 %>
+                <li class="label label-success">
+                  Pro Account
+                </li>
+              <% else %>
+                <li class="label label-primary">
+                  Basic Account
+                </li>
+              <% end %>
+            </ul> 
+          </div>
+        </div>
+      </li>
     <% end %>
   <% end -%>
 </ul>
