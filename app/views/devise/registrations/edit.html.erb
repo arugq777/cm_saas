@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 well">
     <h2>Edit Your Account</h2>
+    <% get_stripe_data %>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
@@ -36,14 +37,27 @@
 
     <% if current_user.plan_id == 2 %>
       <h3>Modify Billing</h3>
-        <%= render "pro_form" %>
+      <%= render "upgrade_to_pro_form" %>
+      <% if @subscription.cancel_at_period_end %>
+        <p>
+          Pro plan cancelled, but Pro features will remain accessible until 
+          <%= Time.at(@subscription.current_period_end).strftime("%B %-d, %Y") %> 
+        </p>
+      <%else%>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| -%>
+          <input type="hidden", name="cancel_plan" val="true" />
+          <div class="actions form-group">
+            <%= f.submit "Switch to Basic", data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          </div>
+        <% end %>
+      <% end -%>
     <% else %>
       <h3>Upgrade Plan</h3>
-        <%= render "pro_form" %>
+        <%= render "upgrade_to_pro_form" %>
     <% end -%>
     <h3>Cancel my account</h3>
 
-    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure? This deletes your account, and cannot be undone!" }, method: :delete, class: "btn btn-danger" %></p>
 
     <%= link_to "Back", :back %>
   </div>
