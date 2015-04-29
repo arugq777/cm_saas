@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 well">
     <h2>Edit Your Account</h2>
-    <% get_stripe_data %>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
@@ -38,7 +37,7 @@
     <% if current_user.plan_id == 2 %>
       <h3>Modify Billing</h3>
       <%= render "upgrade_to_pro_form" %>
-      <% if @subscription.cancel_at_period_end %>
+      <% if subscription_cancelled %>
         <p>
           Pro plan cancelled, but Pro features will remain accessible until 
           <%= Time.at(@subscription.current_period_end).strftime("%B %-d, %Y") %> 
