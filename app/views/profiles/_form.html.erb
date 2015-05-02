@@ -24,8 +24,8 @@
     <%= f.text_area :description, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :avatar, "Avatar" %>
-    <%= f.file_field :avatar, class: "form-control" %>
+    <%=  f.label :avatar, "Avatar" %>
+    <%=  f.file_field :avatar, class: "form-control", disabled: true %>
   </div>
   <div class="form-group">
     <%= f.submit "Submit", :disable_with => 'Submiting...', class: 'btn btn-primary' %>
