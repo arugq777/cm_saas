@@ -5,16 +5,14 @@ $(document).ready(function(){
     event.preventDefault();
     $('input[type=submit]').prop('disabled', true);
     var error = false;
-    if (!error) { 
       //get the stripe token
-      var card = {
-        number: $('#card_number').val(), 
-        cvc: $('#card_code').val(), 
-        exp_month: $('#card_month').val(), 
-        exp_year: $('#card_year').val()
-        };
-      Stripe.createToken(card, stripeResponseHandler);
-    }
+    var card = {
+      number: $('#card_number').val(), 
+      cvc: $('#card_code').val(), 
+      exp_month: $('#card_month').val(), 
+      exp_year: $('#card_year').val()
+      };
+    Stripe.createToken(card, stripeResponseHandler);
     return false;
   }); //form submission
 
