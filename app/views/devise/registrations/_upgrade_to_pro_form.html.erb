@@ -20,12 +20,12 @@
     <%= hidden_field_tag 'user[plan_id]', '2' %>
     <%= hidden_field_tag 'plan', '2' %>
     <div class="actions form-group">
-      <%= f.submit "Upgrade to Pro", class: "btn btn-success form-submit-btn"%>
+      <%= f.submit "Upgrade to Pro", :disable_with => 'Submitting...', class: "btn btn-success form-submit-btn"%>
     </div>
   <% else %>
     <%= hidden_field_tag 'update_billing', true %>
     <div class="actions form-group">
-      <%= f.submit "Update Card info", class: "btn btn-primary form-submit-btn"%>
+      <%= f.submit "Update Card info", :disable_with => 'Submitting...', class: "btn btn-primary form-submit-btn"%>
     </div>
   <% end %>
 <% end %>
