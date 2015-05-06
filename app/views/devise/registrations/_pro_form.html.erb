@@ -34,6 +34,7 @@
   
   <div class="actions form-group">
     <%= hidden_field_tag 'plan', params[:plan] %>
+    <%= hidden_field_tag 'hidden-token', nil, name: 'user[stripe_card_token]', value: '' %>
     <%= f.submit "Sign up", :disable_with => 'Submitting...', class: "btn btn-success form-submit-btn"%>
   </div>
 <% end %>

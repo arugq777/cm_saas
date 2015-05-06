@@ -18,7 +18,7 @@
   <% if current_user.stripe_customer_token.nil? %>
     <%= hidden_field_tag 'upgrade_plan', true %>
     <%= hidden_field_tag 'user[plan_id]', '2' %>
-    <%= hidden_field_tag 'plan', '2' %>
+    <%= hidden_field_tag 'hidden-token', nil, name: 'user[stripe_card_token]', value: '' %>
     <div class="actions form-group">
       <%= f.submit "Upgrade to Pro", :disable_with => 'Submitting...', class: "btn btn-success form-submit-btn"%>
     </div>

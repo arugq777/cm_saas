@@ -35,7 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
     def user_params
-      params.require(:user).permit(:email, :plan_id, :stripe_card_token, :stripe_customer_token)
+      params.require(:user).permit(:email, :plan_id, :stripe_card_token, :description)
     end
 
     def only_current_user

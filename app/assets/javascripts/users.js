@@ -16,6 +16,7 @@ $(document).ready(function(){
   // }); //form submission
 
   $('#pro_form').submit(function(event){
+    console.log("proform submit");
     var $form = $(this);
     event.preventDefault();
     $('.form-submit-btn').prop('disabled', true);
@@ -38,15 +39,12 @@ $(document).ready(function(){
   }
 
   function stripeResponseHandler(status, response){ 
-    //get a reference to the form
+    //get a reference to the 
     var $f = $('.pro_form');
-    //alert(response.id);
     //get the token from the response
-    var token = response.id;
-
     //Add token to the form:
-    $f.append("<input type='hidden' name='user[stripe_card_token]' value='" + token + "'/>");
-
+    $f.find('#hidden-token').val( response.id );
+    alert($f.find('#hidden-token').val());
     //Submit form
     $f.get(0).submit();
   }
