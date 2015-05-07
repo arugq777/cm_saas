@@ -2,11 +2,11 @@
   <%= devise_error_messages! %>
 
   <div class="form-group">
-    <%= label_tag :card_number, "Credit Card Number" %><br/>
+    <%= label_tag :card_number, "Credit Card Number" %> (for testing, use "4242424242424242")<br/>
     <%= text_field_tag :card_number, nil, name: nil, class:'form-control' %>
   </div>
   <div class="form-group">
-    <%= label_tag :card_code, "Security Code/CVV" %><br/>
+    <%= label_tag :card_code, "Security Code/CVV" %> (any 3 digit number)<br/>
     <%= text_field_tag :card_code, nil, name: nil, class:'form-control' %>
   </div>
   <div class="form-group">
